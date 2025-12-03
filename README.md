@@ -2,7 +2,7 @@
   <img src="https://image.openwave.net.br/image/4bbd56e5-c431-4c62-9e4f-98f4124fd247.png" alt="Logo da Igreja Evangélica Pentecostal A Fonte de Deus" width="220">
 </div>
 
-# Site Oficial — Igreja Evangélica Pentecostal A Fonte de Deus  
+# Igreja Evangélica Pentecostal A Fonte de Deus  
 **CNPJ: 06.997.672/0001-08**
 
 <div align="center">
@@ -13,6 +13,15 @@
 ![Licença](https://img.shields.io/badge/acesso-restrito-red)
 
 </div>
+
+------------------------------------------------------------------------
+
+## 📖 Sobre este Perfil
+
+Perfil oficial da IEP A Fonte de Deus no Github.
+Igreja Evangélica Pentecostal A Fonte de Deus Independente.
+
+Utilizamos este perfil para hospedar o site oficial e demais sites e arquivos estáticos da igreja para uso de seus membros e equipe.
 
 ------------------------------------------------------------------------
 
