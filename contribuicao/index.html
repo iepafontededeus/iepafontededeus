@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribuições - IEP A Fonte de Deus</title>
+    <meta name="description" content="Página de contribuições da IEP A Fonte de Deus. Saiba como realizar seus dízimos e ofertas via PIX ou transferência bancária de forma segura.">
+    <!-- Favicon adicionado -->
+    <link rel="icon" href="https://image.openwave.net.br/image/c70a40f5-8d46-4d18-aa40-483d20a2ae06.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40 transition-colors duration-300">
+        <nav class="container mx-auto px-6 py-1 relative flex justify-center items-center">
+            <a href="index.html" class="popup-link">
+                <img src="https://image.openwave.net.br/image/c70a40f5-8d46-4d18-aa40-483d20a2ae06.png" alt="Logo IEP A Fonte de Deus" class="h-20 w-auto rounded-lg">
+            </a>
+            <button id="menu-button" class="absolute right-6 p-2 rounded-full text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300 z-50">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Menu Popup (Cópia do index para manter consistência) -->
+    <div id="menu-popup" class="hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center transition-opacity duration-300">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 w-11/12 max-w-xs text-center relative">
+            <button id="close-menu-button" class="absolute top-4 right-4 text-gray-500 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <nav class="flex flex-col space-y-5 mt-4">
+                <a href="https://iepafontededeus.com.br/#inicio" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Início</a>
+                <a href="https://iepafontededeus.com.br/#sobre" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Sobre Nós</a>
+                <a href="https://iepafontededeus.com.br/#programacao" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Programação</a>
+                <a href="https://iepafontededeus.com.br/#eventos" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Eventos</a>
+                <a href="https://iepafontededeus.com.br/#enderecos" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Nossas Igrejas</a>
+                <a href="https://iepafontededeus.com.br/#tv-canal" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Nossos Canais</a>
+                <!-- Link Ao Vivo -->
+                <a href="https://iepafontededeus.com.br/aovivo/" class="text-lg font-bold text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-400 transition-colors flex items-center justify-center gap-2">
+                    <span class="relative flex h-3 w-3">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                    </span>
+                    Ao Vivo
+                </a>
+                <a href="https://iepafontededeus.com.br/contribuicao/" class="text-lg font-bold text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-300 transition-colors">Contribuições</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="flex-grow">
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white">Contribuições</h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        "Cada um contribua segundo propôs no seu coração; não com tristeza, ou por necessidade; porque Deus ama ao que dá com alegria." 
+                        <br><span class="text-amber-500 font-semibold">2 Coríntios 9:7</span>
+                    </p>
+                </div>
+
+                <!-- Grid ajustado para alinhar altura -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+                    
+                    <!-- PIX -->
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border-t-4 border-amber-500 h-full flex flex-col">
+                        <div class="flex items-center justify-center mb-6">
+                            <svg class="w-12 h-12 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-center mb-2 text-gray-900 dark:text-white">Contribua via PIX</h2>
+                        <p class="text-center text-gray-600 dark:text-gray-400 mb-6">Use o QR Code ou copie a chave.</p>
+                        
+                        <div class="flex justify-center mb-6">
+                            <!-- QR Code Atualizado -->
+                            <img src="https://image.openwave.net.br/image/f6e09488-1b80-4c72-80f6-d65ab3fec4e2.png" alt="QR Code PIX" class="rounded-lg border border-gray-200 dark:border-gray-700 w-48 h-48 object-contain">
+                        </div>
+
+                        <div class="space-y-6 flex-grow">
+                            <!-- Chave CNPJ -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 text-center">Chave CNPJ</label>
+                                <div class="relative">
+                                    <input type="text" id="pix-key" value="06.997.672/0001-08" class="w-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg py-3 px-4 focus:outline-none focus:border-amber-500 text-center font-mono" readonly>
+                                    <button onclick="copyContent('pix-key')" class="mt-2 w-full bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold py-2 px-4 rounded-lg transition duration-300 flex items-center justify-center gap-2 border border-amber-200">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                        Copiar Chave
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Pix Copia e Cola -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 text-center">Pix Copia e Cola</label>
+                                <div class="relative">
+                                    <textarea id="pix-paste" rows="2" class="w-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 rounded-lg py-2 px-4 focus:outline-none focus:border-amber-500 text-xs font-mono resize-none" readonly>00020126360014BR.GOV.BCB.PIX0114069976720001085204000053039865802BR5901N6001C62070503***63048C8D</textarea>
+                                    <button onclick="copyContent('pix-paste')" class="mt-2 w-full bg-amber-500 hover:bg-amber-400 text-gray-900 font-bold py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center gap-2 shadow-md">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                                        Copiar Código
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <p id="copy-feedback" class="text-green-600 dark:text-green-400 text-sm text-center mt-4 opacity-0 transition-opacity duration-300 font-semibold">Copiado com sucesso!</p>
+                    </div>
+
+                    <!-- Dados Bancários -->
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border-t-4 border-gray-800 dark:border-gray-600 h-full flex flex-col">
+                        <div class="flex items-center justify-center mb-6">
+                            <svg class="w-12 h-12 text-gray-800 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-center mb-2 text-gray-900 dark:text-white">Transferência Bancária</h2>
+                        <p class="text-center text-gray-600 dark:text-gray-400 mb-8">Para DOC ou TED.</p>
+                        
+                        <!-- Dados alinhados verticalmente -->
+                        <div class="space-y-4 text-lg flex-grow">
+                            <div class="flex flex-col border-b border-gray-200 dark:border-gray-700 pb-2">
+                                <span class="text-sm text-gray-500 dark:text-gray-400 mb-1">Banco</span>
+                                <span class="font-semibold text-gray-900 dark:text-white">Banco Itaú (341)</span>
+                            </div>
+                            <div class="flex flex-col border-b border-gray-200 dark:border-gray-700 pb-2">
+                                <span class="text-sm text-gray-500 dark:text-gray-400 mb-1">Agência</span>
+                                <span class="font-semibold text-gray-900 dark:text-white">7482</span>
+                            </div>
+                            <div class="flex flex-col border-b border-gray-200 dark:border-gray-700 pb-2">
+                                <span class="text-sm text-gray-500 dark:text-gray-400 mb-1">Conta Corrente</span>
+                                <span class="font-semibold text-gray-900 dark:text-white">22100-4</span>
+                            </div>
+                            <div class="flex flex-col border-b border-gray-200 dark:border-gray-700 pb-2">
+                                <span class="text-sm text-gray-500 dark:text-gray-400 mb-1">Favorecido</span>
+                                <span class="font-semibold text-gray-900 dark:text-white">Igreja Evangélica Pentecostal A Fonte de Deus Independente</span>
+                            </div>
+                            <div class="flex flex-col pt-2">
+                                <span class="text-sm text-gray-500 dark:text-gray-400 mb-1">CNPJ</span>
+                                <span class="font-semibold text-gray-900 dark:text-white">06.997.672/0001-08</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg text-sm text-center text-gray-500 dark:text-gray-400">
+                            <p>Após realizar a transferência, envie o comprovante para o whatsapp do pastor.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-black text-white py-8 transition-colors duration-300 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Igreja Evangélica Pentecostal A Fonte de Deus Independente - CNPJ: 06.997.672/0001-08. Todos os direitos reservados.</p>
+            <p class="mt-4 text-sm text-gray-400">Site feito por: <a href="https://linkwaveconnect.com.br" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">LinkWave Connect LTDA</a> - CNPJ: 53.108.042/0001-07</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script do Menu
+        const menuButton = document.getElementById('menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const menuPopup = document.getElementById('menu-popup');
+        
+        if (menuButton && closeMenuButton && menuPopup) {
+            menuButton.addEventListener('click', () => {
+                menuPopup.classList.remove('hidden');
+            });
+            closeMenuButton.addEventListener('click', () => {
+                menuPopup.classList.add('hidden');
+            });
+        }
+
+        // Script genérico para Copiar
+        function copyContent(elementId) {
+            const element = document.getElementById(elementId);
+            element.select();
+            element.setSelectionRange(0, 99999); // Para mobile
+            
+            try {
+                document.execCommand('copy');
+                showFeedback();
+            } catch (err) {
+                console.error('Erro ao copiar:', err);
+                alert("Não foi possível copiar automaticamente. Por favor, copie manualmente.");
+            }
+        }
+
+        function showFeedback() {
+            const feedback = document.getElementById('copy-feedback');
+            feedback.classList.remove('opacity-0');
+            setTimeout(() => {
+                feedback.classList.add('opacity-0');
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
