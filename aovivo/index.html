@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ao Vivo - IEP A Fonte de Deus</title>
+    <meta name="description" content="Assista aos cultos da Igreja Evangélica Pentecostal A Fonte de Deus ao vivo. Acompanhe nossas transmissões e adore a Deus onde estiver.">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- Favicon -->
+    <link rel="icon" href="https://image.openwave.net.br/image/c70a40f5-8d46-4d18-aa40-483d20a2ae06.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem;
+            background-color: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40 transition-colors duration-300">
+        <nav class="container mx-auto px-6 py-1 relative flex justify-center items-center">
+            <a href="https://iepafontededeus.com.br" class="popup-link">
+                <img src="https://image.openwave.net.br/image/c70a40f5-8d46-4d18-aa40-483d20a2ae06.png" alt="Logo IEP A Fonte de Deus" class="h-20 w-auto rounded-lg">
+            </a>
+            <button id="menu-button" class="absolute right-6 p-2 rounded-full text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300 z-50">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Menu Popup -->
+    <div id="menu-popup" class="hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center transition-opacity duration-300">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 w-11/12 max-w-xs text-center relative">
+            <button id="close-menu-button" class="absolute top-4 right-4 text-gray-500 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <nav class="flex flex-col space-y-5 mt-4">
+                <a href="https://iepafontededeus.com.br/#inicio" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Início</a>
+                <a href="https://iepafontededeus.com.br/#sobre" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Sobre Nós</a>
+                <a href="https://iepafontededeus.com.br/#programacao" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Programação</a>
+                <a href="https://iepafontededeus.com.br/#eventos" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Eventos</a>
+                <a href="https://iepafontededeus.com.br/#enderecos" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Nossas Igrejas</a>
+                <a href="https://iepafontededeus.com.br/#tv-canal" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Nossos Canais</a>
+                <!-- Link Ao Vivo -->
+                <a href="https://iepafontededeus.com.br/aovivo/" class="text-lg font-bold text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-400 transition-colors flex items-center justify-center gap-2">
+                    <span class="relative flex h-3 w-3">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                    </span>
+                    Ao Vivo
+                </a>
+                <a href="https://iepafontededeus.com.br/contribuicao/" class="text-lg font-bold text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-300 transition-colors">Contribuições</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="flex-grow">
+        <section class="py-10 md:py-16 bg-gray-100 dark:bg-black text-center">
+            <div class="container mx-auto px-4">
+                <div class="mb-8">
+                    <span class="inline-block py-1 px-3 rounded-full bg-red-600 text-white text-xs font-bold tracking-wider uppercase mb-4 animate-pulse">Estamos no Ar</span>
+                    <h1 class="text-3xl md:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white">Culto Ao Vivo</h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        Acompanhe a transmissão da Palavra de Deus e adore conosco onde você estiver.
+                    </p>
+                </div>
+
+                <!-- Player de Vídeo Principal -->
+                <div class="max-w-4xl mx-auto shadow-2xl rounded-2xl overflow-hidden border-4 border-white dark:border-gray-800">
+                    <div class="video-container">
+                        <!-- IMPORTANTE: Substitua 'LIVE_VIDEO_ID' pelo ID da transmissão ao vivo atual ou use o link do canal para live 'https://www.youtube.com/embed/live_stream?channel=CHANNEL_ID' -->
+                        <iframe src="https://www.youtube.com/embed/live_stream?channel=UC-9-kyTW8ZkZNDHQJ6FgpwQ" title="Culto Ao Vivo IEP A Fonte de Deus" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://iepafontededeus.com.br/contribuicao/" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-900 bg-amber-500 rounded-lg hover:bg-amber-400 transition duration-300 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Quero Ofertar
+                    </a>
+                    <a href="https://wa.me/5511999999999" target="_blank" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-green-600 rounded-lg hover:bg-green-500 transition duration-300 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.466c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        Pedir Oração
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horários das Transmissões -->
+        <section class="py-12 bg-white dark:bg-gray-900">
+             <div class="container mx-auto px-6 text-center">
+                <h3 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Horários das Transmissões</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-800">
+                        <p class="font-bold text-amber-500">Segunda-feira</p>
+                        <p class="text-gray-600 dark:text-gray-400">23h45 - Live do Pastor</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-800">
+                        <p class="font-bold text-amber-500">Terça-feira</p>
+                        <p class="text-gray-600 dark:text-gray-400">15h00 - Live do Pastor</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-800">
+                        <p class="font-bold text-amber-500">Quarta-feira</p>
+                        <p class="text-gray-600 dark:text-gray-400">19h00 - Culto Público</p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-gray-50 dark:bg-gray-800">
+                        <p class="font-bold text-amber-500">Domingo</p>
+                        <p class="text-gray-600 dark:text-gray-400">18h00 - Culto da Família</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-black text-white py-8 transition-colors duration-300 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Igreja Evangélica Pentecostal A Fonte de Deus Independente - CNPJ: 06.997.672/0001-08. Todos os direitos reservados.</p>
+            <p class="mt-4 text-sm text-gray-400">Site feito por: <a href="https://linkwaveconnect.com.br" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">LinkWave Connect LTDA</a> - CNPJ: 53.108.042/0001-07</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script do Menu
+        const menuButton = document.getElementById('menu-button');
+        const closeMenuButton = document.getElementById('close-menu-button');
+        const menuPopup = document.getElementById('menu-popup');
+        
+        if (menuButton && closeMenuButton && menuPopup) {
+            menuButton.addEventListener('click', () => {
+                menuPopup.classList.remove('hidden');
+            });
+            closeMenuButton.addEventListener('click', () => {
+                menuPopup.classList.add('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
