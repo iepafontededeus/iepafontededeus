@@ -21,7 +21,12 @@
             height: 0;
             overflow: hidden;
             border-radius: 0.5rem; /* rounded-lg */
-            background-color: #000; /* Fundo preto para preencher as laterais em vídeos verticais */
+            background-color: #000; /* Fundo preto */
+        }
+
+        /* Container de vídeo Vertical (9:16 - Celular) */
+        .video-container.vertical {
+            padding-bottom: 177.78%; /* 9:16 aspect ratio */
         }
 
         /* Estilo do IFRAME (Vídeo) - Fica SEMPRE por cima */
@@ -32,7 +37,7 @@
             width: 100%;
             height: 100%;
             border: 0;
-            z-index: 20; /* Garante que o vídeo cubra o texto */
+            z-index: 20;
             background: black;
         }
         /* Estilo do Texto de Espera - Fica por baixo */
@@ -49,15 +54,18 @@
         }
     </style>
 </head>
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200 flex flex-col min-h-screen">
+<!-- BODY: Fundo Cinza Escuro FIXO (gray-900) e Texto Claro FIXO (gray-200) -->
+<body class="bg-gray-900 text-gray-200 flex flex-col min-h-screen">
 
-    <!-- Header -->
-    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40 transition-colors duration-300">
+    <!-- Header: Fundo Cinza Escuro (gray-800) FIXO -->
+    <header class="bg-gray-800 shadow-md sticky top-0 z-40 transition-colors duration-300 border-b border-gray-700">
         <nav class="container mx-auto px-6 py-1 relative flex justify-center items-center">
+            <!-- Link absoluto -->
             <a href="https://iepafontededeus.com.br">
                 <img src="https://image.openwave.net.br/image/c70a40f5-8d46-4d18-aa40-483d20a2ae06.png" alt="Logo IEP A Fonte de Deus" class="h-20 w-auto rounded-lg">
             </a>
-            <button id="menu-button" class="absolute right-6 p-2 rounded-full text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300 z-50">
+            <!-- Botão Menu: Cor clara fixa -->
+            <button id="menu-button" class="absolute right-6 p-2 rounded-full text-gray-300 hover:bg-gray-700 transition duration-300 z-50">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
@@ -65,39 +73,40 @@
         </nav>
     </header>
 
-    <!-- Menu Popup -->
-    <div id="menu-popup" class="hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center transition-opacity duration-300">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 w-11/12 max-w-xs text-center relative">
-            <button id="close-menu-button" class="absolute top-4 right-4 text-gray-500 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">
+    <!-- Menu Popup: Fundo Escuro FIXO -->
+    <div id="menu-popup" class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center transition-opacity duration-300">
+        <div class="bg-gray-800 rounded-2xl shadow-xl p-8 w-11/12 max-w-xs text-center relative border border-gray-700">
+            <button id="close-menu-button" class="absolute top-4 right-4 text-gray-400 hover:text-amber-500 transition-colors">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <nav class="flex flex-col space-y-5 mt-4">
-                <a href="https://iepafontededeus.com.br/#inicio" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Início</a>
-                <a href="https://iepafontededeus.com.br/#sobre" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Sobre Nós</a>
-                <a href="https://iepafontededeus.com.br/#programacao" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Programação</a>
-                <a href="https://iepafontededeus.com.br/#eventos" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Eventos</a>
-                <a href="https://iepafontededeus.com.br/#enderecos" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Nossas Igrejas</a>
-                <a href="https://iepafontededeus.com.br/#tv-canal" class="text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Nossos Canais</a>
+                <a href="https://iepafontededeus.com.br/#inicio" class="text-lg text-gray-300 hover:text-amber-500 transition-colors">Início</a>
+                <a href="https://iepafontededeus.com.br/#sobre" class="text-lg text-gray-300 hover:text-amber-500 transition-colors">Sobre Nós</a>
+                <a href="https://iepafontededeus.com.br/#programacao" class="text-lg text-gray-300 hover:text-amber-500 transition-colors">Programação</a>
+                <a href="https://iepafontededeus.com.br/#eventos" class="text-lg text-gray-300 hover:text-amber-500 transition-colors">Eventos</a>
+                <a href="https://iepafontededeus.com.br/#enderecos" class="text-lg text-gray-300 hover:text-amber-500 transition-colors">Nossas Igrejas</a>
+                <a href="https://iepafontededeus.com.br/#tv-canal" class="text-lg text-gray-300 hover:text-amber-500 transition-colors">Nossos Canais</a>
                 <!-- Link Ao Vivo -->
-                <a href="https://iepafontededeus.com.br/aovivo/" class="text-lg font-bold text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-400 transition-colors flex items-center justify-center gap-2">
+                <a href="https://iepafontededeus.com.br/aovivo/" class="text-lg font-bold text-red-500 hover:text-red-400 transition-colors flex items-center justify-center gap-2">
                     <span class="relative flex h-3 w-3">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                       <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                     </span>
                     Ao Vivo
                 </a>
-                <a href="https://iepafontededeus.com.br/contribuicao/" class="text-lg font-bold text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-300 transition-colors">Contribuições</a>
+                <a href="https://iepafontededeus.com.br/contribuicao/" class="text-lg font-bold text-amber-500 hover:text-amber-400 transition-colors">Contribuições</a>
             </nav>
         </div>
     </div>
 
     <main class="flex-grow">
-        <section class="py-10 md:py-16 bg-white dark:bg-gray-900 text-center">
+        <!-- Seção Principal: Fundo Cinza Escuro (bg-gray-900) FIXO -->
+        <section class="py-10 md:py-16 bg-gray-900 text-center">
             <div class="container mx-auto px-4">
                 <div class="mb-10">
                     <span class="inline-block py-1 px-3 rounded-full bg-red-600 text-white text-xs font-bold tracking-wider uppercase mb-4 animate-pulse">Transmissões</span>
-                    <h1 class="text-3xl md:text-5xl font-extrabold mb-4 text-gray-900 dark:text-white">Cultos Ao Vivo</h1>
-                    <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    <h1 class="text-3xl md:text-5xl font-extrabold mb-4 text-white">Cultos Ao Vivo</h1>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
                         Acompanhe a transmissão da Palavra de Deus e adore conosco onde você estiver.
                     </p>
                     
@@ -114,108 +123,218 @@
                     </div>
                 </div>
 
-                <!-- Grid de Transmissões (2x2) -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Grid de Transmissões (Uma para cada igreja) -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
                     <!-- 1. FILIAL CANTA GALO -->
-                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-800">
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-700">
                         <div class="p-4 bg-amber-500 text-gray-900 font-bold text-lg flex justify-between items-center">
                             <span>Filial Canta Galo</span>
                             <div class="flex gap-2">
-                                <!-- Ícone Facebook -->
                                 <svg class="w-5 h-5 text-blue-700" fill="currentColor" viewBox="0 0 24 24"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
-                                <!-- Ícone YouTube -->
-                                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                                <svg class="w-5 h-5 text-red-700" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
                             </div>
                         </div>
                         <div class="p-4">
                             <div class="video-container">
-                                <!-- ========================================================== -->
-                                <!--       COLE O SEU CÓDIGO IFRAME ABAIXO DESTA LINHA        -->
-                                <!-- ========================================================== -->
-                                
-                                <!-- O vídeo colado aqui cobrirá automaticamente o aviso abaixo -->
-                                <div class="video-placeholder bg-gray-100 dark:bg-gray-800 text-gray-500">
+                                <!-- COLE SEU IFRAME AQUI -->
+                                <div class="video-placeholder bg-gray-700 text-gray-400">
                                     <p class="text-center px-4 font-semibold">Aguardando transmissão...</p>
                                 </div>
                             </div>
+                            
+                            <!-- ========== CONTROLE DE STATUS (ONLINE / OFFLINE) ========== -->
+                            
+                            <!-- 1. OPÇÃO ONLINE (Vermelho Pulsante) - ATIVO AGORA -->
+                            <div class="mt-3 p-3 bg-gray-700 rounded border border-gray-600 text-sm flex items-center justify-center gap-2 text-gray-300">
+                                <span class="relative flex h-2.5 w-2.5">
+                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
+                                </span>
+                                <span class="font-bold text-amber-500 uppercase text-xs">No Ar:</span> Culto Ao Vivo
+                            </div>
+
+                            <!-- 2. OPÇÃO OFFLINE (Cinza Estático) - DESCOMENTE PARA USAR
+                            <div class="mt-3 p-3 bg-gray-700 rounded border border-gray-600 text-sm flex items-center justify-center gap-2 text-gray-400">
+                                <span class="relative flex h-2.5 w-2.5">
+                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gray-500"></span>
+                                </span>
+                                <span class="font-bold uppercase text-xs">Status:</span> Sem transmissão
+                            </div>
+                            -->
                         </div>
                     </div>
 
                     <!-- 2. FILIAL RINCÃO -->
-                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-800">
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-700">
                         <div class="p-4 bg-amber-500 text-gray-900 font-bold text-lg flex justify-between items-center">
                             <span>Filial Rincão</span>
                             <div class="flex gap-2">
                                 <svg class="w-5 h-5 text-blue-700" fill="currentColor" viewBox="0 0 24 24"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
-                                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                                <svg class="w-5 h-5 text-red-700" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
                             </div>
                         </div>
                         <div class="p-4">
                             <div class="video-container">
-                                <!-- ========================================================== -->
-                                <!--       COLE O SEU CÓDIGO IFRAME ABAIXO DESTA LINHA        -->
-                                <!-- ========================================================== -->
-
-                                <div class="video-placeholder bg-gray-100 dark:bg-gray-800 text-gray-500">
+                                <!-- COLE SEU IFRAME AQUI -->
+                                <div class="video-placeholder bg-gray-700 text-gray-400">
                                     <p class="text-center px-4 font-semibold">Aguardando transmissão...</p>
                                 </div>
                             </div>
+                            
+                            <!-- ========== CONTROLE DE STATUS (ONLINE / OFFLINE) ========== -->
+
+                            <!-- 1. OPÇÃO ONLINE (Vermelho Pulsante) - ATIVO AGORA -->
+                            <div class="mt-3 p-3 bg-gray-700 rounded border border-gray-600 text-sm flex items-center justify-center gap-2 text-gray-300">
+                                <span class="relative flex h-2.5 w-2.5">
+                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
+                                </span>
+                                <span class="font-bold text-amber-500 uppercase text-xs">No Ar:</span> Programação Normal
+                            </div>
+
+                            <!-- 2. OPÇÃO OFFLINE (Cinza Estático) - DESCOMENTE PARA USAR
+                            <div class="mt-3 p-3 bg-gray-700 rounded border border-gray-600 text-sm flex items-center justify-center gap-2 text-gray-400">
+                                <span class="relative flex h-2.5 w-2.5">
+                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gray-500"></span>
+                                </span>
+                                <span class="font-bold uppercase text-xs">Status:</span> Sem transmissão
+                            </div>
+                            -->
                         </div>
                     </div>
 
                     <!-- 3. FILIAL MORRO GRANDE -->
-                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-800">
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-700">
                         <div class="p-4 bg-amber-500 text-gray-900 font-bold text-lg flex justify-between items-center">
                             <span>Filial Morro Grande</span>
                             <div class="flex gap-2">
                                 <svg class="w-5 h-5 text-blue-700" fill="currentColor" viewBox="0 0 24 24"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
-                                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                                <svg class="w-5 h-5 text-red-700" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
                             </div>
                         </div>
                         <div class="p-4">
                             <div class="video-container">
-                                <!-- ========================================================== -->
-                                <!--       COLE O SEU CÓDIGO IFRAME ABAIXO DESTA LINHA        -->
-                                <!-- ========================================================== -->
-
-                                <div class="video-placeholder bg-gray-100 dark:bg-gray-800 text-gray-500">
+                                <!-- COLE SEU IFRAME AQUI -->
+                                <div class="video-placeholder bg-gray-700 text-gray-400">
                                     <p class="text-center px-4 font-semibold">Aguardando transmissão...</p>
                                 </div>
                             </div>
+                            
+                            <!-- ========== CONTROLE DE STATUS ========== -->
+
+                            <!-- 1. ONLINE -->
+                            <div class="mt-3 p-3 bg-gray-700 rounded border border-gray-600 text-sm flex items-center justify-center gap-2 text-gray-300">
+                                <span class="relative flex h-2.5 w-2.5">
+                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
+                                </span>
+                                <span class="font-bold text-amber-500 uppercase text-xs">No Ar:</span> Programação Normal
+                            </div>
+
+                             <!-- 2. OFFLINE (Descomente para usar)
+                            <div class="mt-3 p-3 bg-gray-700 rounded border border-gray-600 text-sm flex items-center justify-center gap-2 text-gray-400">
+                                <span class="relative flex h-2.5 w-2.5">
+                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gray-500"></span>
+                                </span>
+                                <span class="font-bold uppercase text-xs">Status:</span> Sem transmissão
+                            </div>
+                            -->
                         </div>
                     </div>
                     
                     <!-- 4. CULTOS ESPECIAIS / EXTRA -->
-                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-800">
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-700">
                         <div class="p-4 bg-amber-500 text-gray-900 font-bold text-lg flex justify-between items-center">
                             <span>Cultos Especiais / Extra</span>
                              <div class="flex gap-2">
                                 <svg class="w-5 h-5 text-blue-700" fill="currentColor" viewBox="0 0 24 24"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
-                                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                                <svg class="w-5 h-5 text-red-700" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
                             </div>
                         </div>
                         <div class="p-4">
                             <div class="video-container">
-                                <!-- ========================================================== -->
-                                <!--       COLE O SEU CÓDIGO IFRAME ABAIXO DESTA LINHA        -->
-                                <!-- ========================================================== -->
-<iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fiepafontededeus%2Fvideos%2F1171612045087303%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-                                <div class="video-placeholder bg-gray-100 dark:bg-gray-800 text-gray-500">
+                                <!-- COLE SEU IFRAME AQUI -->
+                                <div class="video-placeholder bg-gray-700 text-gray-400">
                                     <p class="text-center px-4 font-semibold">Aguardando transmissão...</p>
                                 </div>
                             </div>
+                            
+                            <!-- ========== CONTROLE DE STATUS ========== -->
+
+                            <!-- 1. ONLINE -->
+                            <div class="mt-3 p-3 bg-gray-700 rounded border border-gray-600 text-sm flex items-center justify-center gap-2 text-gray-300">
+                                <span class="relative flex h-2.5 w-2.5">
+                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
+                                </span>
+                                <span class="font-bold text-amber-500 uppercase text-xs">No Ar:</span> Programação Normal
+                            </div>
+                            
+                            <!-- 2. OFFLINE
+                            <div class="mt-3 p-3 bg-gray-700 rounded border border-gray-600 text-sm flex items-center justify-center gap-2 text-gray-400">
+                                <span class="relative flex h-2.5 w-2.5">
+                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gray-500"></span>
+                                </span>
+                                <span class="font-bold uppercase text-xs">Status:</span> Sem transmissão
+                            </div>
+                            -->
                         </div>
                     </div>
 
                 </div>
+                
+                <!-- ============================================================== -->
+                <!--             LIVE DO PASTOR (BOX VERTICAL CENTRALIZADO)        -->
+                <!-- ============================================================== -->
+                <div class="mt-12 max-w-sm mx-auto">
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-700">
+                        <div class="p-4 bg-amber-500 text-gray-900 font-bold text-lg flex justify-between items-center">
+                            <span>Live do Pastor</span>
+                            <div class="flex gap-2">
+                                <svg class="w-5 h-5 text-blue-700" fill="currentColor" viewBox="0 0 24 24"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
+                                <svg class="w-5 h-5 text-red-700" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <!-- Container Vertical (9:16) -->
+                            <div class="video-container vertical">
+                                <!-- COLE SEU IFRAME VERTICAL AQUI -->
+                                <div class="video-placeholder bg-gray-700 text-gray-400">
+                                    <p class="text-center px-4 font-semibold">Aguardando live...</p>
+                                </div>
+                            </div>
+                            
+                            <!-- ========== CONTROLE DE STATUS ========== -->
+
+                            <!-- 1. ONLINE -->
+                            <div class="mt-3 p-3 bg-gray-700 rounded border border-gray-600 text-sm flex items-center justify-center gap-2 text-gray-300">
+                                <span class="relative flex h-2.5 w-2.5">
+                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
+                                </span>
+                                <span class="font-bold text-amber-500 uppercase text-xs">No Ar:</span> Programação Normal
+                            </div>
+
+                            <!-- 2. OFFLINE 
+                            <div class="mt-3 p-3 bg-gray-700 rounded border border-gray-600 text-sm flex items-center justify-center gap-2 text-gray-400">
+                                <span class="relative flex h-2.5 w-2.5">
+                                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gray-500"></span>
+                                </span>
+                                <span class="font-bold uppercase text-xs">Status:</span> Sem transmissão
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Fim da Live do Pastor -->
 
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 dark:bg-black text-white py-8 transition-colors duration-300 mt-auto">
+    <footer class="bg-black text-white py-8 transition-colors duration-300 mt-auto">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2025 Igreja Evangélica Pentecostal A Fonte de Deus Independente - CNPJ: 06.997.672/0001-08. Todos os direitos reservados.</p>
             <p class="mt-4 text-sm text-gray-400">Site feito por: <a href="https://linkwaveconnect.com.br" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">LinkWave Connect LTDA</a> - CNPJ: 53.108.042/0001-07</p>
@@ -239,3 +358,5 @@
     </script>
 </body>
 </html>
+
+
