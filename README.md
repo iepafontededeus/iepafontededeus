@@ -1,17 +1,18 @@
-::: {align="center"}
-`<img src="https://image.openwave.net.br/image/4bbd56e5-c431-4c62-9e4f-98f4124fd247.png" alt="Logo da Igreja Evangélica Pentecostal A Fonte de Deus" width="220">`{=html}
-:::
+<div align="center">
+  <img src="https://image.openwave.net.br/image/4bbd56e5-c431-4c62-9e4f-98f4124fd247.png" alt="Logo da Igreja Evangélica Pentecostal A Fonte de Deus" width="220">
+</div>
 
-# Site Oficial --- Igreja Evangélica Pentecostal A Fonte de Deus
-
+# Site Oficial — Igreja Evangélica Pentecostal A Fonte de Deus  
 **CNPJ: 06.997.672/0001-08**
 
-::: {align="center"}
+<div align="center">
+
 ![Status](https://img.shields.io/badge/status-online-brightgreen)
 ![HTML](https://img.shields.io/badge/feito_em-HTML5-blue)
 ![Estático](https://img.shields.io/badge/tipo-site_estático-lightgrey)
 ![Licença](https://img.shields.io/badge/acesso-restrito-red)
-:::
+
+</div>
 
 ------------------------------------------------------------------------
 
