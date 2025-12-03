@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEP A Fonte de Deus</title>
+    <meta name="description" content="Site oficial da Igreja Evangélica Pentecostal A Fonte de Deus. Confira nossa programação, endereços das igrejas, eventos e mensagens de fé. Venha adorar a Deus conosco!">
+    <!-- Meta tag de Referrer Policy adicionada -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <!-- Favicon adicionado -->
+    <link rel="icon" href="https://image.openwave.net.br/image/c70a40f5-8d46-4d18-aa40-483d20a2ae06.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        /* A rolagem suave agora é controlada 100% pelo JavaScript para máxima compatibilidade */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .carousel-wrapper {
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            flex-shrink: 0;
+            width: 100%;
+        }
+        @media (min-width: 768px) {
+            .carousel-item {
+                width: calc(100% / 3);
+            }
+        }
+        @keyframes fade-in-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        /* Estilos para o conteúdo gerado pela IA */
+        .prose h3 { margin-top: 1em; margin-bottom: 0.5em; font-weight: bold; }
+        .prose p { margin-bottom: 1em; }
+        .prose ul { list-style-position: inside; }
+
+        /* Estilos para o vídeo responsivo */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem; /* Borda arredondada */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40 transition-colors duration-300">
+        <nav class="container mx-auto px-6 py-1 relative flex justify-center items-center">
+            <a href="https://iepafontededeus.com.br">
+                <!-- Ícone da Igreja (Aspecto Original) -->
+                <img src="https://image.openwave.net.br/image/c70a40f5-8d46-4d18-aa40-483d20a2ae06.png" alt="Logo IEP A Fonte de Deus" class="h-20 w-auto rounded-lg">
+            </a>
+            <button id="menu-button" class="absolute right-6 p-2 rounded-full text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300 z-50">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Menu Popup -->
+    <div id="menu-popup" class="hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center transition-opacity duration-300">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 w-11/12 max-w-xs text-center relative">
+            <button id="close-menu-button" class="absolute top-4 right-4 text-gray-500 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <nav class="flex flex-col space-y-5 mt-4">
+                <a href="https://iepafontededeus.com.br/#inicio" class="popup-link text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Início</a>
+                <a href="https://iepafontededeus.com.br/#sobre" class="popup-link text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Sobre Nós</a>
+                <a href="https://iepafontededeus.com.br/#programacao" class="popup-link text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Programação</a>
+                <a href="https://iepafontededeus.com.br/#eventos" class="popup-link text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Eventos</a>
+                <a href="https://iepafontededeus.com.br/#enderecos" class="popup-link text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Nossas Igrejas</a>
+                <a href="https://iepafontededeus.com.br/#tv-canal" class="popup-link text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Nossos Canais</a>
+                <!-- Link Ao Vivo -->
+                <a href="https://iepafontededeus.com.br/aovivo/" class="text-lg font-bold text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-400 transition-colors flex items-center justify-center gap-2">
+                    <span class="relative flex h-3 w-3">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                    </span>
+                    Ao Vivo
+                </a>
+                <a href="https://iepafontededeus.com.br/contribuicao/" class="text-lg font-bold text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-300 transition-colors">Contribuições</a>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="relative bg-gray-900 text-white py-20 md:py-32 overflow-hidden">
+            <div class="absolute inset-0">
+                <!-- ALTERAR IMAGEM DE FUNDO DO TOPO -->
+                <div class="w-full h-full opacity-10 bg-no-repeat bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/000000/ffffff?text=Imagem+de+Fundo');"></div>
+            </div>
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-4 animate-fade-in-up">Bem-vindo à IEP A Fonte de Deus</h1>
+                <p class="text-xl md:text-2xl font-light mb-8 opacity-90 animate-fade-in-up delay-100">Onde a vida encontra a verdadeira esperança e o amor de Cristo.</p>
+                <a href="https://iepafontededeus.com.br/#programacao" class="popup-link bg-amber-500 text-gray-900 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-amber-400 animate-fade-in-up delay-200">Veja Nossos Cultos</a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="sobre" class="py-16 md:py-24 bg-white dark:bg-gray-800 transition-colors duration-300">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-gray-900 dark:text-white">Sobre a <span class="text-amber-500">IEP A Fonte de Deus</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 hover:scale-105">
+                        <!-- ALTERAR IMAGEM DA SEÇÃO SOBRE NÓS -->
+                        <img src="https://placehold.co/600x400/3498db/ffffff?text=Foto+da+Comunidade" alt="[Imagem da comunidade da igreja em um momento de confraternização]" class="w-full h-auto">
+                    </div>
+                    <div>
+                        <p class="text-lg leading-relaxed mb-6">A IEP A Fonte de Deus nasceu do desejo de ser um farol de luz e esperança para a comunidade. Nossa missão é compartilhar o amor de Deus e ser um ponto de encontro onde as pessoas possam crescer em sua fé, encontrar apoio e descobrir seu propósito divino.</p>
+                        <p class="text-lg leading-relaxed">Somos uma família unida pela fé, dedicada a servir e adorar. Convidamos você a fazer parte da nossa jornada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Schedule Section in Grid -->
+        <section id="programacao" class="py-16 md:py-24 bg-gray-100 dark:bg-black">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-amber-500">Nossa Programação Semanal</h2>
+                <div class="flex flex-wrap justify-center -m-4">
+                    
+                    <!-- Card Segunda-feira -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Segunda</h3>
+                            <div class="space-y-4 text-left flex-grow">
+                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Morro Grande:</p><p class="text-sm text-gray-700 dark:text-gray-300">19h00 - Culto Público</p></div>
+                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Rincão:</p><p class="text-sm text-gray-700 dark:text-gray-300">19h00 - Culto com as Irmãs</p></div>
+                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Pág. IEP A Fonte de Deus:</p><p class="text-sm text-gray-700 dark:text-gray-300">23h45 - Live do Pastor</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Terça-feira -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
+                            <h3 class="text-2xl font-bold mb-6 text-amber-500">Terça</h3>
+                            <div class="space-y-4 text-left flex-grow">
+                                 <div><p class="font-semibold text-gray-800 dark:text-gray-200">Pág. IEP A Fonte de Deus:</p><p class="text-sm text-gray-700 dark:text-gray-300">15h00 - Live do Pastor</p></div>
+                                 <div><p class="font-semibold text-gray-800 dark:text-gray-200">Canta Galo:</p><p class="text-sm text-gray-700 dark:text-gray-300">19h00 - Culto Público</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Quarta-feira -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Quarta</h3>
+                            <div class="space-y-4 text-left flex-grow">
+                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Morro Grande:</p><p class="text-sm text-gray-700 dark:text-gray-300">19h00 - Culto Público</p></div>
+                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Rincão:</p><p class="text-sm text-gray-700 dark:text-gray-300">19h00 - Culto Público</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Quinta-feira -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Quinta</h3>
+                            <div class="space-y-4 text-left flex-grow">
+                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Canta Galo:</p><p class="text-sm text-gray-700 dark:text-gray-300">19h00 - Culto Público</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Sexta-feira -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
+                            <h3 class="text-2xl font-bold mb-6 text-amber-500">Sexta</h3>
+                            <div class="space-y-4 text-left flex-grow">
+                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Canta Galo:</p><p class="text-sm text-gray-700 dark:text-gray-300">15h00 - Tarde da Benção</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Sábado -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
+                            <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Sábado</h3>
+                            <div class="space-y-4 text-left flex-grow">
+                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Em todas as igrejas:</p><p class="text-sm text-gray-700 dark:text-gray-300">09h00 - Consagração</p></div>
+                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Canta Galo:</p><p class="text-sm text-gray-700 dark:text-gray-300">10h00 - Curso do Batismo<br>18h30 - Chá das Mulheres</p></div>
+                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Rincão:</p><p class="text-sm text-gray-700 dark:text-gray-300">15h00 - Tarde da Benção</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Domingo -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 p-4">
+                         <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
+                            <h3 class="text-2xl font-bold mb-6 text-amber-500">Domingo</h3>
+                            <div class="space-y-4 text-left flex-grow">
+                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Morro Grande:</p><p class="text-sm text-gray-700 dark:text-gray-300">09h30 - Culto da Família</p></div>
+                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Canta Galo:</p><p class="text-sm text-gray-700 dark:text-gray-300">18h00 - Culto da Família</p></div>
+                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Rincão:</p><p class="text-sm text-gray-700 dark:text-gray-300">18h00 - Culto da Família</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Section with Carousel -->
+        <section id="eventos" class="py-16 md:py-24 bg-white dark:bg-gray-800 transition-colors duration-300">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-gray-900 dark:text-white">Próximos Eventos</h2>
+                <div class="flex items-center justify-center">
+                    <button id="prev-eventos" class="p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-110 mr-4 z-10"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>
+                    <div id="eventos-carousel-viewport" class="w-full overflow-hidden">
+                        <div class="carousel-wrapper flex">
+                            <div class="carousel-item p-4"><div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl shadow-lg h-full"><p class="text-sm text-gray-700 dark:text-gray-300 font-bold mb-2">29 de Novembro de 2025 - 10h00</p><h3 class="text-xl font-bold mb-2">Curso do Batismo</h3><p class="text-gray-700 dark:text-gray-300">Curso dedicado aqueles que irão se batizar.<br>Filial Canta Galo</p></div></div>
+                            <div class="carousel-item p-4"><div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl shadow-lg h-full"><p class="text-sm text-gray-700 dark:text-gray-300 font-bold mb-2">30 de Novembro de 2025 - 09h00</p><h3 class="text-xl font-bold mb-2">Batismo</h3><p class="text-gray-700 dark:text-gray-300">Batismo nas águas realizado por nosso pastor Jesus Magalhães.</p></div></div>
+                            <div class="carousel-item p-4"><div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl shadow-lg h-full"><p class="text-sm text-gray-700 dark:text-gray-300 font-bold mb-2">6 de Dezembro de 2025 - 18h30</p><h3 class="text-xl font-bold mb-2">Chá das Mulheres</h3><p class="text-gray-700 dark:text-gray-300">Um encontro com palavra, louvor e comunhão, apenas para as varoas.<br>Filial Canta Galo</p></div></div>
+                            <div class="carousel-item p-4"><div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl shadow-lg h-full"><p class="text-sm text-gray-700 dark:text-gray-300 font-bold mb-2">13 de Dezembro de 2025 - 18h00</p><h3 class="text-xl font-bold mb-2">Santa Ceia</h3><p class="text-gray-700 dark:text-gray-300">Celebração do pão e do vinho em representação ao sangue e corpo de cristo.<br>Filial Canta Galo</p></div></div>
+                            <div class="carousel-item p-4"><div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl shadow-lg h-full"><p class="text-sm text-gray-700 dark:text-gray-300 font-bold mb-2">20 de Dezembro de 2025 - 18h30</p><h3 class="text-xl font-bold mb-2">Culto de Ação de Graças Local</h3><p class="text-gray-700 dark:text-gray-300">Culto local de ação de graças para agradecer a Deus pelo ano.<br>Filial Rincão</p></div></div>
+                            <div class="carousel-item p-4"><div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl shadow-lg h-full"><p class="text-sm text-gray-700 dark:text-gray-300 font-bold mb-2">24 de Dezembro de 2025 - 18h00</p><h3 class="text-xl font-bold mb-2">Culto de Natal</h3><p class="text-gray-700 dark:text-gray-300">Evento especial com muito louvor. Traga sua família.<br>Filial Canta Galo</p></div></div>
+                            <div class="carousel-item p-4"><div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl shadow-lg h-full"><p class="text-sm text-gray-700 dark:text-gray-300 font-bold mb-2">31 de Dezembro de 2025 - 18h00</p><h3 class="text-xl font-bold mb-2">Culto de Ação de Graças</h3><p class="text-gray-700 dark:text-gray-300">Culto de Ação de Graças geral, onde o Pr. Jesus irá orar por bênçãos em 2026.<br>Filial Canta Galo</p></div></div>
+                        </div>
+                    </div>
+                    <button id="next-eventos" class="p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-110 ml-4 z-10"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nossas Igrejas Section -->
+        <section id="enderecos" class="py-16 md:py-24 bg-gray-100 dark:bg-black transition-colors duration-300">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-amber-500">Nossas Igrejas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                    
+                    <!-- Endereço 1: Sede -->
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="https://placehold.co/400x250/3498db/ffffff?text=Igreja+Canta+Galo" alt="[Imagem da fachada da Igreja do Canta Galo]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Filial - Canta Galo</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                Rua Salto do Itararé, 112<br>
+                                Jd. Sydney, São Paulo - SP<br>
+                                CEP: 05201-050
+                            </p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Rua+Salto+do+Itararé,+112,+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer" class="inline-block bg-amber-500 text-gray-900 font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-amber-400 transition duration-300">Ver no Mapa</a>
+                        </div>
+                    </div>
+        
+                    <!-- Endereço 2: Filial -->
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="https://placehold.co/400x250/2ecc71/ffffff?text=Igreja+Rincão" alt="[Imagem da fachada da Igreja do Rincão]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Filial - Rincão</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                Rua Dr. Carmelo D'Agostino, 672<br>
+                                Jardim Rincão, São Paulo - SP<br>
+                                CEP: 02991-040
+                            </p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Rua+doutor+carmelo+dagostino,+672,+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer" class="inline-block bg-amber-500 text-gray-900 font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-amber-400 transition duration-300">Ver no Mapa</a>
+                        </div>
+                    </div>
+        
+                    <!-- Endereço 3: Filial -->
+                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="https://placehold.co/400x250/e74c3c/ffffff?text=Igreja+Morro+Grande" alt="[Imagem da fachada da Igreja do Morro Grande]" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Filial - Morro Grande</h3>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                Av. Fuad Lutfalla, 1549 - Salão 2<br>
+                                Vila Maria Trindade, São Paulo - SP<br>
+                                CEP: 02968-000
+                            </p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Av.+Fuad+Lutfalla,+1549,+S%C3%A3o+Paulo" target="_blank" rel="noopener noreferrer" class="inline-block bg-amber-500 text-gray-900 font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-amber-400 transition duration-300">Ver no Mapa</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Nossos Canais Section -->
+        <section class="py-16 md:py-24 bg-white dark:bg-gray-800 transition-colors duration-300">
+            <div class="container mx-auto px-6">
+                <h2 id="tv-canal" class="text-3xl md:text-4xl font-bold mb-12 text-amber-500 text-center">Nossos Canais no YouTube</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+                    
+                    <!-- Coluna 1: Canal TV -->
+                    <div class="text-center">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800 dark:text-gray-200">Canal TV IEP A Fonte de Deus</h3>
+                        <div class="space-y-8">
+                            <!-- Vídeo 1 -->
+                            <div class="shadow-xl transform transition-transform duration-300 hover:scale-105">
+                                <div class="video-container">
+                                    <!-- ALTERAR: Cole o código de incorporação do YouTube aqui, trocando a URL -->
+                                    <iframe src="https://relay.openwave.net.br/youtube-sec.html?v=IaB6c_90E6c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <!-- Vídeo 2 -->
+                            <div class="shadow-xl transform transition-transform duration-300 hover:scale-105">
+                                <div class="video-container">
+                                    <!-- ALTERAR: Cole o código de incorporação do YouTube aqui, trocando a URL -->
+                                    <iframe src="https://relay.openwave.net.br/youtube-sec.html?v=tF8YBz73lcI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <!-- Vídeo 3 -->
+                            <div class="shadow-xl transform transition-transform duration-300 hover:scale-105">
+                                <div class="video-container">
+                                   <!-- ALTERAR: Cole o código de incorporação do YouTube aqui, trocando a URL -->
+                                    <iframe src="https://relay.openwave.net.br/youtube-sec.html?v=NWfxESV7hqg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.youtube.com/@tviepafontededeus" target="_blank" rel="noopener noreferrer" class="mt-8 inline-block bg-red-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 hover:bg-red-700">
+                            Visite nosso Canal no YouTube
+                        </a>
+                    </div>
+                    
+                    <!-- Coluna 2: Canal Principal -->
+                    <div id="canal-principal" class="text-center">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800 dark:text-gray-200">Canal IEP A Fonte de Deus</h3>
+                        <div class="space-y-8">
+                             <!-- Vídeo 4 -->
+                            <div class="shadow-xl transform transition-transform duration-300 hover:scale-105">
+                                <div class="video-container">
+                                    <!-- ALTERAR: Cole o código de incorporação do YouTube aqui, trocando a URL -->
+                                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <!-- Vídeo 5 -->
+                            <div class="shadow-xl transform transition-transform duration-300 hover:scale-105">
+                                <div class="video-container">
+                                    <!-- ALTERAR: Cole o código de incorporação do YouTube aqui, trocando a URL -->
+                                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <!-- Vídeo 6 -->
+                            <div class="shadow-xl transform transition-transform duration-300 hover:scale-105">
+                                <div class="video-container">
+                                   <!-- ALTERAR: Cole o código de incorporação do YouTube aqui, trocando a URL -->
+                                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://www.youtube.com/@iepafontededeus" target="_blank" rel="noopener noreferrer" class="mt-8 inline-block bg-red-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 hover:bg-red-700">
+                            Visite o Canal Principal
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-black text-white py-8 transition-colors duration-300 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Igreja Evangélica Pentecostal A Fonte de Deus Independente - CNPJ: 06.997.672/0001-08. Todos os direitos reservados.</p>
+            <p class="mt-4 text-sm text-gray-400">Site feito por: <a href="https://linkwaveconnect.com.br" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">LinkWave Connect LTDA</a> - CNPJ: 53.108.042/0001-07</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Lógica para o novo menu popup
+            const menuButton = document.getElementById('menu-button');
+            const closeMenuButton = document.getElementById('close-menu-button');
+            const menuPopup = document.getElementById('menu-popup');
+            const header = document.querySelector('header');
+            
+            // Inclui TODOS os links que precisam de rolagem suave
+            const smoothScrollLinks = document.querySelectorAll('.popup-link');
+
+            menuButton.addEventListener('click', () => {
+                menuPopup.classList.remove('hidden');
+            });
+
+            closeMenuButton.addEventListener('click', () => {
+                menuPopup.classList.add('hidden');
+            });
+
+            // CORREÇÃO DEFINITIVA: Lógica de rolagem suave com JavaScript
+            smoothScrollLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // REMOVIDO preventDefault para permitir a navegação completa da URL
+                    // e.preventDefault(); 
+                    
+                    // Esconde o menu popup após o clique
+                    menuPopup.classList.add('hidden');
+                });
+            });
+
+            // LÓGICA DO CARROSSEL (APENAS EVENTOS AGORA)
+            function initCarousel(viewportId, prevId, nextId) {
+                const viewport = document.getElementById(viewportId);
+                if (!viewport) return;
+                const track = viewport.querySelector('.carousel-wrapper');
+                const prevBtn = document.getElementById(prevId);
+                const nextBtn = document.getElementById(nextId);
+                const items = Array.from(track.children);
+                if (!track || !prevBtn || !nextBtn || items.length === 0) return;
+
+                let currentIndex = 0, itemWidth = 0, itemsVisible = 1, autoPlayInterval;
+                function updateDimensions() {
+                    itemWidth = items[0].getBoundingClientRect().width;
+                    itemsVisible = window.innerWidth >= 768 ? 3 : 1;
+                    moveToSlide(currentIndex, false);
+                }
+                function moveToSlide(index, animate = true) {
+                    const maxIndex = items.length - itemsVisible;
+                    if (index < 0) { index = maxIndex; } else if (index > maxIndex) { index = 0; }
+                    currentIndex = index;
+                    const offset = -currentIndex * itemWidth;
+                    track.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
+                    track.style.transform = `translateX(${offset}px)`;
+                }
+                const startAutoPlay = () => { autoPlayInterval = setInterval(() => { moveToSlide(currentIndex + 1); }, 4000); };
+                const resetAutoPlay = () => { clearInterval(autoPlayInterval); startAutoPlay(); };
+                nextBtn.addEventListener('click', () => { moveToSlide(currentIndex + 1); resetAutoPlay(); });
+                prevBtn.addEventListener('click', () => { moveToSlide(currentIndex - 1); resetAutoPlay(); });
+                window.addEventListener('resize', updateDimensions);
+                updateDimensions();
+                startAutoPlay();
+            }
+            // A inicialização do carrossel da programação foi removida.
+            initCarousel('eventos-carousel-viewport', 'prev-eventos', 'next-eventos');
+        });
+    </script>
+</body>
+</html>
