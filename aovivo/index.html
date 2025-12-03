@@ -14,7 +14,7 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Container de vídeo responsivo (16:9) funciona para YouTube e Facebook */
+        /* Container de vídeo responsivo PADRÃO (16:9 - Horizontal) */
         .video-container {
             position: relative;
             padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -23,6 +23,13 @@
             border-radius: 0.5rem; /* rounded-lg */
             background-color: #000; /* Fundo preto enquanto carrega */
         }
+        
+        /* CLASSE NOVA: Use esta classe para vídeos Verticais (9:16 - Celular) */
+        /* Exemplo de uso: <div class="video-container vertical"> */
+        .video-container.vertical {
+            padding-bottom: 177.78%; /* 9:16 aspect ratio */
+        }
+
         /* Estilo do IFRAME (Vídeo) - Fica SEMPRE por cima */
         .video-container iframe {
             position: absolute;
@@ -113,29 +120,30 @@
                     </div>
                 </div>
 
-                <!-- Grid de Transmissões (2x2) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Grid de Transmissões -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
                     <!-- 1. FILIAL CANTA GALO -->
                     <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-800">
                         <div class="p-4 bg-amber-500 text-gray-900 font-bold text-lg flex justify-between items-center">
                             <span>Filial Canta Galo</span>
                             <div class="flex gap-2">
-                                <!-- Ícone Facebook -->
+                                <!-- Ícones indicativos -->
                                 <svg class="w-5 h-5 text-blue-700" fill="currentColor" viewBox="0 0 24 24"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"/></svg>
-                                <!-- Ícone YouTube -->
                                 <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
                             </div>
                         </div>
                         <div class="p-4">
+                            <!-- 
+                                DICA: Se o vídeo for VERTICAL (celular), mude a classe abaixo para:
+                                <div class="video-container vertical"> 
+                            -->
                             <div class="video-container">
-                                
                                 <!-- ========================================================== -->
                                 <!--       COLE O SEU CÓDIGO IFRAME ABAIXO DESTA LINHA        -->
                                 <!-- ========================================================== -->
                                 
                                 <!-- O vídeo colado aqui cobrirá automaticamente o aviso abaixo -->
-                                
                                 <div class="video-placeholder bg-gray-100 dark:bg-gray-800 text-gray-500">
                                     <p class="text-center px-4 font-semibold">Aguardando transmissão...</p>
                                 </div>
@@ -153,12 +161,11 @@
                             </div>
                         </div>
                         <div class="p-4">
+                            <!-- DICA: Adicione 'vertical' na classe se o vídeo for em pé -->
                             <div class="video-container">
-                                
                                 <!-- ========================================================== -->
                                 <!--       COLE O SEU CÓDIGO IFRAME ABAIXO DESTA LINHA        -->
                                 <!-- ========================================================== -->
-                                
 
                                 <div class="video-placeholder bg-gray-100 dark:bg-gray-800 text-gray-500">
                                     <p class="text-center px-4 font-semibold">Aguardando transmissão...</p>
@@ -177,12 +184,11 @@
                             </div>
                         </div>
                         <div class="p-4">
+                            <!-- DICA: Adicione 'vertical' na classe se o vídeo for em pé -->
                             <div class="video-container">
-                                
                                 <!-- ========================================================== -->
                                 <!--       COLE O SEU CÓDIGO IFRAME ABAIXO DESTA LINHA        -->
                                 <!-- ========================================================== -->
-                                
 
                                 <div class="video-placeholder bg-gray-100 dark:bg-gray-800 text-gray-500">
                                     <p class="text-center px-4 font-semibold">Aguardando transmissão...</p>
@@ -201,13 +207,12 @@
                             </div>
                         </div>
                         <div class="p-4">
-                            <div class="video-container">
-                                
+                            <!-- DICA: Adicione 'vertical' na classe se o vídeo for em pé -->
+                            <div class="video-container vertical">
                                 <!-- ========================================================== -->
                                 <!--       COLE O SEU CÓDIGO IFRAME ABAIXO DESTA LINHA        -->
                                 <!-- ========================================================== -->
-                                <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fiepafontededeus%2Fvideos%2F1171612045087303%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
-
+<iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fiepafontededeus%2Fvideos%2F1171612045087303%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
                                 <div class="video-placeholder bg-gray-100 dark:bg-gray-800 text-gray-500">
                                     <p class="text-center px-4 font-semibold">Aguardando transmissão...</p>
                                 </div>
