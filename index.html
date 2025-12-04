@@ -62,16 +62,17 @@
         }
     </style>
 </head>
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-200">
+<!-- BODY: Fundo Cinza Escuro FIXO (gray-900) e Texto Claro FIXO (gray-200) -->
+<body class="bg-gray-900 text-gray-200">
 
-    <!-- Header -->
-    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40 transition-colors duration-300">
+    <!-- Header: Fundo Cinza Escuro (gray-800) FIXO -->
+    <header class="bg-gray-800 shadow-md sticky top-0 z-40 transition-colors duration-300 border-b border-gray-700">
         <nav class="container mx-auto px-6 py-1 relative flex justify-center items-center">
             <a href="https://iepafontededeus.com.br">
                 <!-- Ícone da Igreja (Aspecto Original) -->
                 <img src="https://image.openwave.net.br/image/c70a40f5-8d46-4d18-aa40-483d20a2ae06.png" alt="Logo IEP A Fonte de Deus" class="h-20 w-auto rounded-lg">
             </a>
-            <button id="menu-button" class="absolute right-6 p-2 rounded-full text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-300 z-50">
+            <button id="menu-button" class="absolute right-6 p-2 rounded-full text-gray-300 hover:bg-gray-700 transition duration-300 z-50">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
@@ -80,27 +81,27 @@
     </header>
 
     <!-- Menu Popup -->
-    <div id="menu-popup" class="hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center transition-opacity duration-300">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 w-11/12 max-w-xs text-center relative">
-            <button id="close-menu-button" class="absolute top-4 right-4 text-gray-500 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">
+    <div id="menu-popup" class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center transition-opacity duration-300">
+        <div class="bg-gray-800 rounded-2xl shadow-xl p-8 w-11/12 max-w-xs text-center relative border border-gray-700">
+            <button id="close-menu-button" class="absolute top-4 right-4 text-gray-400 hover:text-amber-500 transition-colors">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <nav class="flex flex-col space-y-5 mt-4">
-                <a href="https://iepafontededeus.com.br/#inicio" class="popup-link text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Início</a>
-                <a href="https://iepafontededeus.com.br/#sobre" class="popup-link text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Sobre Nós</a>
-                <a href="https://iepafontededeus.com.br/#programacao" class="popup-link text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Programação</a>
-                <a href="https://iepafontededeus.com.br/#eventos" class="popup-link text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Eventos</a>
-                <a href="https://iepafontededeus.com.br/#enderecos" class="popup-link text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Nossas Igrejas</a>
-                <a href="https://iepafontededeus.com.br/#tv-canal" class="popup-link text-lg text-gray-700 dark:text-gray-300 hover:text-amber-500 dark:hover:text-amber-400 transition-colors">Nossos Canais</a>
+                <a href="https://iepafontededeus.com.br/#inicio" class="popup-link text-lg text-gray-300 hover:text-amber-500 transition-colors">Início</a>
+                <a href="https://iepafontededeus.com.br/#sobre" class="popup-link text-lg text-gray-300 hover:text-amber-500 transition-colors">Sobre Nós</a>
+                <a href="https://iepafontededeus.com.br/#programacao" class="popup-link text-lg text-gray-300 hover:text-amber-500 transition-colors">Programação</a>
+                <a href="https://iepafontededeus.com.br/#eventos" class="popup-link text-lg text-gray-300 hover:text-amber-500 transition-colors">Eventos</a>
+                <a href="https://iepafontededeus.com.br/#enderecos" class="popup-link text-lg text-gray-300 hover:text-amber-500 transition-colors">Nossas Igrejas</a>
+                <a href="https://iepafontededeus.com.br/#tv-canal" class="popup-link text-lg text-gray-300 hover:text-amber-500 transition-colors">Nossos Canais</a>
                 <!-- Link Ao Vivo -->
-                <a href="https://iepafontededeus.com.br/aovivo/" class="text-lg font-bold text-red-600 hover:text-red-700 dark:text-red-500 dark:hover:text-red-400 transition-colors flex items-center justify-center gap-2">
+                <a href="https://iepafontededeus.com.br/aovivo/" class="text-lg font-bold text-red-500 hover:text-red-400 transition-colors flex items-center justify-center gap-2">
                     <span class="relative flex h-3 w-3">
                       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                       <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                     </span>
                     Ao Vivo
                 </a>
-                <a href="https://iepafontededeus.com.br/contribuicao/" class="text-lg font-bold text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-300 transition-colors">Contribuições</a>
+                <a href="https://iepafontededeus.com.br/contribuicao/" class="text-lg font-bold text-amber-500 hover:text-amber-400 transition-colors">Contribuições</a>
             </nav>
         </div>
     </div>
@@ -115,104 +116,104 @@
             <div class="container mx-auto px-6 text-center relative z-10">
                 <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight mb-4 animate-fade-in-up">Bem-vindo à IEP A Fonte de Deus</h1>
                 <p class="text-xl md:text-2xl font-light mb-8 opacity-90 animate-fade-in-up delay-100">Onde a vida encontra a verdadeira esperança e o amor de Cristo.</p>
-                <a href="https://iepafontededeus.com.br/#programacao" class="popup-link bg-amber-500 text-gray-900 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-amber-400 animate-fade-in-up delay-200">Veja Nossos Cultos</a>
+                <a href="#programacao" class="popup-link bg-amber-500 text-gray-900 font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-amber-400 animate-fade-in-up delay-200">Veja Nossos Cultos</a>
             </div>
         </section>
 
         <!-- About Us Section -->
-        <section id="sobre" class="py-16 md:py-24 bg-white dark:bg-gray-800 transition-colors duration-300">
+        <section id="sobre" class="py-16 md:py-24 bg-gray-800 transition-colors duration-300">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-gray-900 dark:text-white">Sobre a <span class="text-amber-500">IEP A Fonte de Deus</span></h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-white">Sobre a <span class="text-amber-500">IEP A Fonte de Deus</span></h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div class="rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 hover:scale-105">
                         <!-- ALTERAR IMAGEM DA SEÇÃO SOBRE NÓS -->
                         <img src="https://placehold.co/600x400/3498db/ffffff?text=Foto+da+Comunidade" alt="[Imagem da comunidade da igreja em um momento de confraternização]" class="w-full h-auto">
                     </div>
                     <div>
-                        <p class="text-lg leading-relaxed mb-6">A IEP A Fonte de Deus nasceu do desejo de ser um farol de luz e esperança para a comunidade. Nossa missão é compartilhar o amor de Deus e ser um ponto de encontro onde as pessoas possam crescer em sua fé, encontrar apoio e descobrir seu propósito divino.</p>
-                        <p class="text-lg leading-relaxed">Somos uma família unida pela fé, dedicada a servir e adorar. Convidamos você a fazer parte da nossa jornada.</p>
+                        <p class="text-lg leading-relaxed mb-6 text-gray-300">A IEP A Fonte de Deus nasceu do desejo de ser um farol de luz e esperança para a comunidade. Nossa missão é compartilhar o amor de Deus e ser um ponto de encontro onde as pessoas possam crescer em sua fé, encontrar apoio e descobrir seu propósito divino.</p>
+                        <p class="text-lg leading-relaxed text-gray-300">Somos uma família unida pela fé, dedicada a servir e adorar. Convidamos você a fazer parte da nossa jornada.</p>
                     </div>
                 </div>
             </div>
         </section>
         
         <!-- Schedule Section in Grid -->
-        <section id="programacao" class="py-16 md:py-24 bg-gray-100 dark:bg-black">
+        <section id="programacao" class="py-16 md:py-24 bg-gray-900">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-amber-500">Nossa Programação Semanal</h2>
                 <div class="flex flex-wrap justify-center -m-4">
                     
                     <!-- Card Segunda-feira -->
                     <div class="w-full md:w-1/2 lg:w-1/3 p-4">
-                        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
-                            <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Segunda</h3>
+                        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg flex flex-col h-full border border-gray-700">
+                            <h3 class="text-2xl font-bold mb-6 text-white">Segunda</h3>
                             <div class="space-y-4 text-left flex-grow">
-                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Todas as igrejas:</p><p class="text-sm text-gray-700 dark:text-gray-300">Não haverá culto</p></div>
+                                <div><p class="font-semibold text-gray-200">Todas as igrejas:</p><p class="text-sm text-gray-400">Não haverá culto</p></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Card Terça-feira -->
                     <div class="w-full md:w-1/2 lg:w-1/3 p-4">
-                        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
+                        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg flex flex-col h-full border border-gray-700">
                             <h3 class="text-2xl font-bold mb-6 text-amber-500">Terça</h3>
                             <div class="space-y-4 text-left flex-grow">
-                                 <div><p class="font-semibold text-gray-800 dark:text-gray-200">Canta Galo:</p><p class="text-sm text-gray-700 dark:text-gray-300">19h00 - Culto Público</p></div>
+                                 <div><p class="font-semibold text-gray-200">Canta Galo:</p><p class="text-sm text-gray-400">19h00 - Culto Público</p></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Card Quarta-feira -->
                     <div class="w-full md:w-1/2 lg:w-1/3 p-4">
-                        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
-                            <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Quarta</h3>
+                        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg flex flex-col h-full border border-gray-700">
+                            <h3 class="text-2xl font-bold mb-6 text-white">Quarta</h3>
                             <div class="space-y-4 text-left flex-grow">
-                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Morro Grande:</p><p class="text-sm text-gray-700 dark:text-gray-300">19h00 - Culto Público</p></div>
-                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Rincão:</p><p class="text-sm text-gray-700 dark:text-gray-300">19h00 - Culto Público</p></div>
+                                <div><p class="font-semibold text-gray-200">Morro Grande:</p><p class="text-sm text-gray-400">19h00 - Culto Público</p></div>
+                                <div><p class="font-semibold text-gray-200">Rincão:</p><p class="text-sm text-gray-400">19h00 - Culto Público</p></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Card Quinta-feira -->
                     <div class="w-full md:w-1/2 lg:w-1/3 p-4">
-                        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
-                            <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Quinta</h3>
+                        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg flex flex-col h-full border border-gray-700">
+                            <h3 class="text-2xl font-bold mb-6 text-white">Quinta</h3>
                             <div class="space-y-4 text-left flex-grow">
-                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Canta Galo:</p><p class="text-sm text-gray-700 dark:text-gray-300">19h00 - Culto Público</p></div>
+                                <div><p class="font-semibold text-gray-200">Canta Galo:</p><p class="text-sm text-gray-400">19h00 - Culto Público</p></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Card Sexta-feira -->
                     <div class="w-full md:w-1/2 lg:w-1/3 p-4">
-                        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
+                        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg flex flex-col h-full border border-gray-700">
                             <h3 class="text-2xl font-bold mb-6 text-amber-500">Sexta</h3>
                             <div class="space-y-4 text-left flex-grow">
-                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Canta Galo:</p><p class="text-sm text-gray-700 dark:text-gray-300">15h00 - Tarde da Benção</p></div>
+                                <div><p class="font-semibold text-gray-200">Canta Galo:</p><p class="text-sm text-gray-400">15h00 - Tarde da Benção</p></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Card Sábado -->
                     <div class="w-full md:w-1/2 lg:w-1/3 p-4">
-                        <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
-                            <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Sábado</h3>
+                        <div class="bg-gray-800 p-6 rounded-2xl shadow-lg flex flex-col h-full border border-gray-700">
+                            <h3 class="text-2xl font-bold mb-6 text-white">Sábado</h3>
                             <div class="space-y-4 text-left flex-grow">
-                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Em todas as igrejas:</p><p class="text-sm text-gray-700 dark:text-gray-300">09h00 - Consagração</p></div>
-                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Rincão:</p><p class="text-sm text-gray-700 dark:text-gray-300">15h00 - Tarde da Benção</p></div>
-                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Canta Galo:</p><p class="text-sm text-gray-700 dark:text-gray-300">18h30 - Chá das Mulheres</p></div>
+                                <div><p class="font-semibold text-gray-200">Em todas as igrejas:</p><p class="text-sm text-gray-400">09h00 - Consagração</p></div>
+                                <div><p class="font-semibold text-gray-200">Canta Galo:</p><p class="text-sm text-gray-400">10h00 - Curso do Batismo<br>18h30 - Chá das Mulheres</p></div>
+                                <div><p class="font-semibold text-gray-200">Rincão:</p><p class="text-sm text-gray-400">15h00 - Tarde da Benção</p></div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Card Domingo -->
                     <div class="w-full md:w-1/2 lg:w-1/3 p-4">
-                         <div class="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg flex flex-col h-full">
+                         <div class="bg-gray-800 p-6 rounded-2xl shadow-lg flex flex-col h-full border border-gray-700">
                             <h3 class="text-2xl font-bold mb-6 text-amber-500">Domingo</h3>
                             <div class="space-y-4 text-left flex-grow">
-                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Morro Grande:</p><p class="text-sm text-gray-700 dark:text-gray-300">09h30 - Culto da Família</p></div>
-                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Canta Galo:</p><p class="text-sm text-gray-700 dark:text-gray-300">18h00 - Culto da Família</p></div>
-                                <div><p class="font-semibold text-gray-800 dark:text-gray-200">Rincão:</p><p class="text-sm text-gray-700 dark:text-gray-300">18h00 - Culto da Família</p></div>
+                                <div><p class="font-semibold text-gray-200">Morro Grande:</p><p class="text-sm text-gray-400">09h30 - Culto da Família</p></div>
+                                <div><p class="font-semibold text-gray-200">Canta Galo:</p><p class="text-sm text-gray-400">18h00 - Culto da Família</p></div>
+                                <div><p class="font-semibold text-gray-200">Rincão:</p><p class="text-sm text-gray-400">18h00 - Culto da Família</p></div>
                             </div>
                         </div>
                     </div>
@@ -221,37 +222,39 @@
         </section>
 
         <!-- Events Section with Carousel -->
-        <section id="eventos" class="py-16 md:py-24 bg-white dark:bg-gray-800 transition-colors duration-300">
+        <section id="eventos" class="py-16 md:py-24 bg-gray-800 transition-colors duration-300">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-gray-900 dark:text-white">Próximos Eventos</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-12 text-white">Próximos Eventos</h2>
                 <div class="flex items-center justify-center">
-                    <button id="prev-eventos" class="p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-110 mr-4 z-10"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>
+                    <button id="prev-eventos" class="p-3 bg-gray-700 text-gray-200 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-110 mr-4 z-10"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>
                     <div id="eventos-carousel-viewport" class="w-full overflow-hidden">
                         <div class="carousel-wrapper flex">
-                            <div class="carousel-item p-4"><div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl shadow-lg h-full"><p class="text-sm text-gray-700 dark:text-gray-300 font-bold mb-2">6 de Dezembro de 2025 - 18h30</p><h3 class="text-xl font-bold mb-2">Chá das Mulheres</h3><p class="text-gray-700 dark:text-gray-300">Um encontro com palavra, louvor e comunhão, apenas para as varoas.<br>Filial Canta Galo</p></div></div>
-                            <div class="carousel-item p-4"><div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl shadow-lg h-full"><p class="text-sm text-gray-700 dark:text-gray-300 font-bold mb-2">13 de Dezembro de 2025 - 18h00</p><h3 class="text-xl font-bold mb-2">Santa Ceia</h3><p class="text-gray-700 dark:text-gray-300">Celebração do pão e do vinho em representação ao sangue e corpo de cristo.<br>Filial Canta Galo</p></div></div>
-                            <div class="carousel-item p-4"><div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl shadow-lg h-full"><p class="text-sm text-gray-700 dark:text-gray-300 font-bold mb-2">20 de Dezembro de 2025 - 18h30</p><h3 class="text-xl font-bold mb-2">Culto de Ação de Graças Local</h3><p class="text-gray-700 dark:text-gray-300">Culto local de ação de graças para agradecer a Deus pelo ano.<br>Filial Rincão</p></div></div>
-                            <div class="carousel-item p-4"><div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl shadow-lg h-full"><p class="text-sm text-gray-700 dark:text-gray-300 font-bold mb-2">24 de Dezembro de 2025 - 18h00</p><h3 class="text-xl font-bold mb-2">Culto de Natal</h3><p class="text-gray-700 dark:text-gray-300">Evento especial com muito louvor. Traga sua família.<br>Filial Canta Galo</p></div></div>
-                            <div class="carousel-item p-4"><div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl shadow-lg h-full"><p class="text-sm text-gray-700 dark:text-gray-300 font-bold mb-2">31 de Dezembro de 2025 - 18h00</p><h3 class="text-xl font-bold mb-2">Culto de Ação de Graças</h3><p class="text-gray-700 dark:text-gray-300">Culto de Ação de Graças geral, onde o Pr. Jesus irá orar por bênçãos em 2026.<br>Filial Canta Galo</p></div></div>
+                            <div class="carousel-item p-4"><div class="bg-gray-900 p-6 rounded-2xl shadow-lg h-full border border-gray-700"><p class="text-sm text-gray-400 font-bold mb-2">29 de Novembro de 2025 - 10h00</p><h3 class="text-xl font-bold mb-2 text-white">Curso do Batismo</h3><p class="text-gray-400">Curso dedicado aqueles que irão se batizar.<br>Filial Canta Galo</p></div></div>
+                            <div class="carousel-item p-4"><div class="bg-gray-900 p-6 rounded-2xl shadow-lg h-full border border-gray-700"><p class="text-sm text-gray-400 font-bold mb-2">30 de Novembro de 2025 - 09h00</p><h3 class="text-xl font-bold mb-2 text-white">Batismo</h3><p class="text-gray-400">Batismo nas águas realizado por nosso pastor Jesus Magalhães.</p></div></div>
+                            <div class="carousel-item p-4"><div class="bg-gray-900 p-6 rounded-2xl shadow-lg h-full border border-gray-700"><p class="text-sm text-gray-400 font-bold mb-2">6 de Dezembro de 2025 - 18h30</p><h3 class="text-xl font-bold mb-2 text-white">Chá das Mulheres</h3><p class="text-gray-400">Um encontro com palavra, louvor e comunhão, apenas para as varoas.<br>Filial Canta Galo</p></div></div>
+                            <div class="carousel-item p-4"><div class="bg-gray-900 p-6 rounded-2xl shadow-lg h-full border border-gray-700"><p class="text-sm text-gray-400 font-bold mb-2">13 de Dezembro de 2025 - 18h00</p><h3 class="text-xl font-bold mb-2 text-white">Santa Ceia</h3><p class="text-gray-400">Celebração do pão e do vinho em representação ao sangue e corpo de cristo.<br>Filial Canta Galo</p></div></div>
+                            <div class="carousel-item p-4"><div class="bg-gray-900 p-6 rounded-2xl shadow-lg h-full border border-gray-700"><p class="text-sm text-gray-400 font-bold mb-2">20 de Dezembro de 2025 - 18h30</p><h3 class="text-xl font-bold mb-2 text-white">Culto de Ação de Graças Local</h3><p class="text-gray-400">Culto local de ação de graças para agradecer a Deus pelo ano.<br>Filial Rincão</p></div></div>
+                            <div class="carousel-item p-4"><div class="bg-gray-900 p-6 rounded-2xl shadow-lg h-full border border-gray-700"><p class="text-sm text-gray-400 font-bold mb-2">24 de Dezembro de 2025 - 18h00</p><h3 class="text-xl font-bold mb-2 text-white">Culto de Natal</h3><p class="text-gray-400">Evento especial com muito louvor. Traga sua família.<br>Filial Canta Galo</p></div></div>
+                            <div class="carousel-item p-4"><div class="bg-gray-900 p-6 rounded-2xl shadow-lg h-full border border-gray-700"><p class="text-sm text-gray-400 font-bold mb-2">31 de Dezembro de 2025 - 18h00</p><h3 class="text-xl font-bold mb-2 text-white">Culto de Ação de Graças</h3><p class="text-gray-400">Culto de Ação de Graças geral, onde o Pr. Jesus irá orar por bênçãos em 2026.<br>Filial Canta Galo</p></div></div>
                         </div>
                     </div>
-                    <button id="next-eventos" class="p-3 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-110 ml-4 z-10"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>
+                    <button id="next-eventos" class="p-3 bg-gray-700 text-gray-200 rounded-full shadow-lg transition-transform duration-300 transform hover:scale-110 ml-4 z-10"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>
                 </div>
             </div>
         </section>
 
         <!-- Nossas Igrejas Section -->
-        <section id="enderecos" class="py-16 md:py-24 bg-gray-100 dark:bg-black transition-colors duration-300">
+        <section id="enderecos" class="py-16 md:py-24 bg-gray-900 transition-colors duration-300">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-12 text-amber-500">Nossas Igrejas</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
                     
-                    <!-- Endereço 1: Sede -->
-                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                    <!-- Endereço 1: Canta Galo -->
+                    <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 border border-gray-700">
                         <img src="https://placehold.co/400x250/3498db/ffffff?text=Igreja+Canta+Galo" alt="[Imagem da fachada da Igreja do Canta Galo]" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Filial - Canta Galo</h3>
-                            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            <h3 class="text-xl font-bold mb-2 text-white">Filial - Canta Galo</h3>
+                            <p class="text-gray-300 mb-4">
                                 Rua Salto do Itararé, 112<br>
                                 Jd. Sydney, São Paulo - SP<br>
                                 CEP: 05201-050
@@ -260,12 +263,12 @@
                         </div>
                     </div>
         
-                    <!-- Endereço 2: Filial -->
-                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                    <!-- Endereço 2: Rincão -->
+                    <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 border border-gray-700">
                         <img src="https://placehold.co/400x250/2ecc71/ffffff?text=Igreja+Rincão" alt="[Imagem da fachada da Igreja do Rincão]" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Filial - Rincão</h3>
-                            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            <h3 class="text-xl font-bold mb-2 text-white">Filial - Rincão</h3>
+                            <p class="text-gray-300 mb-4">
                                 Rua Dr. Carmelo D'Agostino, 672<br>
                                 Jardim Rincão, São Paulo - SP<br>
                                 CEP: 02991-040
@@ -274,12 +277,12 @@
                         </div>
                     </div>
         
-                    <!-- Endereço 3: Filial -->
-                    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                    <!-- Endereço 3: Morro Grande -->
+                    <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 border border-gray-700">
                         <img src="https://placehold.co/400x250/e74c3c/ffffff?text=Igreja+Morro+Grande" alt="[Imagem da fachada da Igreja do Morro Grande]" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Filial - Morro Grande</h3>
-                            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                            <h3 class="text-xl font-bold mb-2 text-white">Filial - Morro Grande</h3>
+                            <p class="text-gray-300 mb-4">
                                 Av. Fuad Lutfalla, 1549 - Salão 2<br>
                                 Vila Maria Trindade, São Paulo - SP<br>
                                 CEP: 02968-000
@@ -293,14 +296,14 @@
         </section>
 
         <!-- Nossos Canais Section -->
-        <section class="py-16 md:py-24 bg-white dark:bg-gray-800 transition-colors duration-300">
+        <section class="py-16 md:py-24 bg-gray-800 transition-colors duration-300">
             <div class="container mx-auto px-6">
                 <h2 id="tv-canal" class="text-3xl md:text-4xl font-bold mb-12 text-amber-500 text-center">Nossos Canais no YouTube</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                     
                     <!-- Coluna 1: Canal TV -->
                     <div class="text-center">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800 dark:text-gray-200">Canal TV IEP A Fonte de Deus</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-8 text-gray-200">Canal TV IEP A Fonte de Deus</h3>
                         <div class="space-y-8">
                             <!-- Vídeo 1 -->
                             <div class="shadow-xl transform transition-transform duration-300 hover:scale-105">
@@ -331,7 +334,7 @@
                     
                     <!-- Coluna 2: Canal Principal -->
                     <div id="canal-principal" class="text-center">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-8 text-gray-800 dark:text-gray-200">Canal IEP A Fonte de Deus</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-8 text-gray-200">Canal IEP A Fonte de Deus</h3>
                         <div class="space-y-8">
                              <!-- Vídeo 4 -->
                             <div class="shadow-xl transform transition-transform duration-300 hover:scale-105">
@@ -367,7 +370,7 @@
     </main>
     
     <!-- Footer -->
-    <footer class="bg-gray-800 dark:bg-black text-white py-8 transition-colors duration-300 mt-auto">
+    <footer class="bg-black text-white py-8 transition-colors duration-300 mt-auto">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2025 Igreja Evangélica Pentecostal A Fonte de Deus Independente - CNPJ: 06.997.672/0001-08. Todos os direitos reservados.</p>
             <p class="mt-4 text-sm text-gray-400">Site feito por: <a href="https://linkwaveconnect.com.br" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">LinkWave Connect LTDA</a> - CNPJ: 53.108.042/0001-07</p>
